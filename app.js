@@ -275,7 +275,7 @@ var member = message.mentions.users.first();
      message.channel.send(myembed)
   };
 
-    let servers = client.guilds.size; // Server Count
+
     let users = 0; // Start of user count
     let channels = client.channels.size; // Channel Count
     
