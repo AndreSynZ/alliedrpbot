@@ -13,7 +13,7 @@ const token = process.env.token;
 const config = require("./config.json");
 // config.token contains the bot's token
 // config.prefix contains the message prefix.
-const PREFIX = "." // bot's prefix
+const PREFIX = "-" // bot's prefix
 
 
 var SourceQuery = require('sourcequery');
@@ -37,9 +37,9 @@ var eightball = [ // sets the answers to an eightball
 const fs = require('fs');
 
 const activities_list = [
-    "with Wumpus | +help", 
-    "with SynZ | +help",
-    "with Sickness | +help"
+    "with Wumpus | -help", 
+    "with SynZ | -help",
+    "with Sickness | -help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
@@ -103,7 +103,7 @@ client.on("message", async message => {
  
   
     let kUser = message.guild.member(message.mentions.users.first()  ||  message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send("That wasn't valid, type this: ``=kick <person> <reason>``.");
+    if(!kUser) return message.channel.send("That wasn't valid, type this: ``-kick <person> <reason>``.");
     let kReason = args.join(" ").slice(22);
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have permission to kick people!");
     if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("That person cannot be kicked!")
@@ -136,7 +136,7 @@ client.on("message", async message => {
     .setAuthor("SynZ's Bot", "https://imgur.com/IqcgMgl.png")
     .setColor('RANDOM')
     .setDescription('This is information about the Bot!')
-    .addField(":robot: SynZ's Bot:", 'In order to see the commands avaliable, type `=help`! ', true)
+    .addField(":robot: SynZ's Bot:", 'In order to see the commands avaliable, type `-help`! ', true)
     .addField(':dog: Discord Server;', 'If you see any errors within the discord bot that needs fixing, hmu! ', true)
 	.setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
     message.channel.send(myembed)
@@ -145,7 +145,7 @@ client.on("message", async message => {
   if(command === "ban"){
 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send("That wasn't valid, type this: ``=ban <person> <reason>``.");
+    if(!bUser) return message.channel.send("That wasn't valid, type this: ``-ban <person> <reason>``.");
     let bReason = args.join(" ").slice(22);
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have permission to ban people!");
     if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send("That person can't be banned!");
@@ -212,9 +212,9 @@ var member = message.mentions.users.first();
      .setAuthor("SynZ's Bot", "https://imgur.com/IqcgMgl.png")
      .setColor('RANDOM')
      .setDescription('These are all the commands that you can currently use on the bot. | ***More will be coming soon!***')
-     .addField(':tools: Moderation:', '`.kick, .ban, .purge` ', true)
-     .addField(':smile: Fun Commands:', '`.say, .cookie, .avatar, .milk, .coinflip, .8ball, .kill` ', true)
-     .addField(':gear: Bot/Server:', '`.ping, .info, .stats` ')
+     .addField(':tools: Moderation:', '`-kick, -ban, -purge` ', true)
+     .addField(':smile: Fun Commands:', '`-say, -cookie, -avatar, -milk, -coinflip, -8ball, -kill` ', true)
+     .addField(':gear: Bot/Server:', '`-ping, -info, -stats` ')
 	.setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
      message.channel.send(myembed)
   };
