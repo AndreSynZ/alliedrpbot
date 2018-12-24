@@ -36,24 +36,18 @@ var eightball = [ // sets the answers to an eightball
 
 const fs = require('fs');
 
-client.on("ready", () => {
-  // This event will run if the bot starts, and logs in, successfully.
-  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-  // Example of changing the bot's playing game to something useful. `client.user` is what the
-  // docs refer to as the "ClientUser".
-  client.user.setActivity("out for =help", {type: "WATCHING"});
-});
+const activities_list = [
+    "with Wumpus | !help", 
+    "with SynZ | !help",
+    "with Sickness | !help"
+    ]; // creates an arraylist containing phrases you want your bot to switch through.
 
-client.on("guildCreate", guild => {
-  // This event triggers when the bot joins a guild.
-  console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  client.user.setActivity("out for =help", {type: "WATCHING"});
-});
-
-client.on("guildDelete", guild => {
-  // this event triggers when the bot is removed from a guild.
-  console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity("out for =help", {type: "WATCHING"});
+client.on('ready', () => {
+	  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
+        client.user.setActivity(activities_list[index], { type: "STREAMING", url: "https://www.twitch.tv/somethingluulop"}); // sets bot's activities to one of the phrases in the arraylist.
+    }, 5000); // Runs this every 10 seconds.
 });
 
 
@@ -99,45 +93,6 @@ client.on("message", async message => {
   }
   
   
-    if(command === 'players') {
-  
-  var sq = new SourceQuery(1000); // 1000ms timeout
-sq.open('208.103.169.21', 27015);
- 
-
-
- 
-sq.getPlayers(function(err, players){
-    let myembed = new Discord.RichEmbed ()
-	.setTitle("Players Online:")
-	.setAuthor("CRUSHED Bot", "https://imgur.com/jHRLfZc.jpg")
-    .setColor('#bc23ff')
-    .setDescription(players.length + "/128")
-    .setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
-    .setThumbnail("https://imgur.com/jHRLfZc.jpg")
-     message.channel.send(myembed)
-});
- 
- };
-
-
-
-  if(command === "testing") {
-    
-  var sq = new SourceQuery(1000); // 1000ms timeout
-sq.open('208.103.169.21', 27015);
-
-
-	let myembed = new Discord.RichEmbed()
-     .setTitle('**__test__**')
-     .setAuthor("CRUSHED Bot", "https://imgur.com/jHRLfZc.jpg")
-     .setColor('#bc23ff')
-     .setDescription('Players Online:')
-     .addField("asd")
-     .setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
-     .setThumbnail("https://imgur.com/jHRLfZc.jpg")
-     message.channel.send(myembed)
-  }
 
 
 
@@ -154,16 +109,15 @@ sq.open('208.103.169.21', 27015);
     if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("That person cannot be kicked!")
 
     let kickEmbed = new Discord.RichEmbed()
-    .setDescription("**__kick__**")
+    .setDescription("kick")
     .setColor('RANDOM')
     .addField("Kicked user", `${kUser} with ID ${kUser.ID}`)
     .addField("Kicked by", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Kicked In", message.channel)
     .addField("Time", message.createdAt)
     .addField("Reason", kReason)
-    .setFooter("Bot made by André", "https://imgur.com/Bg1yrqp.png")
-    .setThumbnail("https://imgur.com/xadYceq.png");
-
+	.setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png");
+	
     let kickChannel = message.guild.channels.find(`name`, "synz-logs");
     if(!kickChannel) return message.channel.send("Can't find general channel");
     
@@ -178,14 +132,13 @@ sq.open('208.103.169.21', 27015);
 
   if(command === "info") {
     let myembed = new Discord.RichEmbed()
-    .setTitle('**__Information!__**')
-    .setAuthor("André's Bot", "https://imgur.com/dqWkYls.png")
+    .setTitle('Information!')
+    .setAuthor("SynZ's Bot", "https://imgur.com/IqcgMgl.png")
     .setColor('RANDOM')
-    .setDescription('This is information about the Bot and the Discord Server!')
-    .addField(":robot: __André's Bot:__", 'In order to see the commands avaliable, type `=help`! ', true)
-    .addField(':dog: __Discord Server:__', 'If you see any errors within the discord server that needs fixing, hmu! ', true)
-    .setFooter("Bot made by André", "https://imgur.com/Bg1yrqp.png")
-    .setThumbnail("https://imgur.com/xadYceq.png")
+    .setDescription('This is information about the Bot!')
+    .addField(":robot: SynZ's Bot:", 'In order to see the commands avaliable, type `=help`! ', true)
+    .addField(':dog: Discord Server;', 'If you see any errors within the discord bot that needs fixing, hmu! ', true)
+	.setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
     message.channel.send(myembed)
  }
 
@@ -198,15 +151,14 @@ sq.open('208.103.169.21', 27015);
     if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send("That person can't be banned!");
 
     let banEmbed = new Discord.RichEmbed()
-    .setDescription("**__Ban__**")
+    .setDescription("Ban")
     .setColor('RANDOM')
     .addField("Banned User", `${bUser} with ID ${bUser.id}`)
     .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Banned In", message.channel)
     .addField("Time", message.createdAt)
     .addField("Reason", bReason)
-    .setFooter("Bot made by André", "https://imgur.com/Bg1yrqp.png")
-    .setThumbnail("https://imgur.com/xadYceq.png");
+	.setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png");
 
     let incidentchannel = message.guild.channels.find(`name`, "synz-logs");
     if(!incidentchannel) return message.channel.send("Can't find general channel");
@@ -243,19 +195,50 @@ if (command == "kill") { // creates the command kill
   else message.channel.send("Who do you want to kill? :gun: (Correct usage: =kill @username)") // sends the error message if no-one is mentioned
 }
 
+
+if(command === "avatar") {
+var member = message.mentions.users.first();
+    let embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setImage(message.author.avatarURL)
+    message.channel.send(embed)
+};
+
+
+
   if(command === "help") {
      let myembed = new Discord.RichEmbed()
-     .setTitle('**__Commands__**')
-     .setAuthor("André's Bot", "https://imgur.com/dqWkYls.png")
+     .setTitle('Commands')
+     .setAuthor("SynZ's Bot", "https://imgur.com/IqcgMgl.png")
      .setColor('RANDOM')
      .setDescription('These are all the commands that you can currently use on the bot. | ***More will be coming soon!***')
-     .addField(':tools: Moderation:', '`=kick, =ban, =purge` ', true)
-     .addField(':smile: Fun Commands:', '`=say, =cookie, =milk, =8ball, =kill` ', true)
-     .addField(':gear: Bot/Server:', '`=ping, =invite, =info` ')
-     .setFooter("Bot made by André", "https://imgur.com/Bg1yrqp.png")
-     .setThumbnail("https://imgur.com/xadYceq.png")
+     .addField(':tools: Moderation:', '`+kick, +ban, +purge` ', true)
+     .addField(':smile: Fun Commands:', '`+say, +cookie, +avatar, +milk, +coinflip, +8ball, +kill` ', true)
+     .addField(':gear: Bot/Server:', '`+ping, +info, +stats` ')
+	.setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
      message.channel.send(myembed)
-  }
+  };
+
+    let servers = client.guilds.size; // Server Count
+    let users = 0; // Start of user count
+    let channels = client.channels.size; // Channel Count
+    
+    // This goes through every guild to grab an accurate memberCount;
+    client.guilds.map(g => users += g.memberCount);
+    
+    // Form Embed
+	if(command == "stats")
+{
+    let myembed = new Discord.RichEmbed()
+        .setTitle('Server Statistics')
+    	.setColor('RANDOM')
+        .addField('Users ', users)
+        .addField('Channels ', channels)
+        .setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
+    	message.channel.send(myembed)
+    
+};
+
 
 
   if(command === "purge") {
