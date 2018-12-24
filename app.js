@@ -326,7 +326,7 @@ return rand[Math.floor(Math.random()*rand.length)];
     message.channel.send('https://discord.gg/nfcYPRw');
 
 
-  }}})
+  }
 
   
 
