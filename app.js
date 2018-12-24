@@ -13,7 +13,7 @@ const token = process.env.token;
 const config = require("./config.json");
 // config.token contains the bot's token
 // config.prefix contains the message prefix.
-const PREFIX = "+" // bot's prefix
+const PREFIX = "." // bot's prefix
 
 
 var SourceQuery = require('sourcequery');
@@ -212,9 +212,9 @@ var member = message.mentions.users.first();
      .setAuthor("SynZ's Bot", "https://imgur.com/IqcgMgl.png")
      .setColor('RANDOM')
      .setDescription('These are all the commands that you can currently use on the bot. | ***More will be coming soon!***')
-     .addField(':tools: Moderation:', '`+kick, +ban, +purge` ', true)
-     .addField(':smile: Fun Commands:', '`+say, +cookie, +avatar, +milk, +coinflip, +8ball, +kill` ', true)
-     .addField(':gear: Bot/Server:', '`+ping, +info, +stats` ')
+     .addField(':tools: Moderation:', '`.kick, .ban, .purge` ', true)
+     .addField(':smile: Fun Commands:', '`.say, .cookie, .avatar, .milk, .coinflip, .8ball, .kill` ', true)
+     .addField(':gear: Bot/Server:', '`.ping, .info, .stats` ')
 	.setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
      message.channel.send(myembed)
   };
