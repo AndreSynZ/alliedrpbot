@@ -241,6 +241,24 @@ var member = message.mentions.users.first();
 
 
 
+if(command == "coinflip")
+{
+      function doRandHT() {
+var rand = ['HEADS!','TAILS!'];
+
+return rand[Math.floor(Math.random()*rand.length)];
+}
+    let myembed = new Discord.RichEmbed()
+    .setTitle('You got..')
+    .setAuthor("SynZ's Bot", "https://imgur.com/IqcgMgl.png")
+    .setColor('RANDOM')
+    .setDescription(doRandHT())
+    .setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
+    message.channel.send(myembed)
+ };
+
+
+
   if(command === "purge") {
     // This command removes all messages from all users in the channel, up to 100.
     
