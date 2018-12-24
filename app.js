@@ -2,7 +2,6 @@
 
 // Load up the discord.js library
 const Discord = require("discord.js");
-const { CommandoClient } = require("discord.js-commando");
 const YTDL = require("ytdl-core");
 
 // This is your client. Some people call it `bot`, some people call it `self`,
