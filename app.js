@@ -90,7 +90,7 @@ client.on("message", async message => {
   // Let's go with a few common example commands! Feel free to delete or change those.
 
 
-
+});
 
 
 if(command === "play") {
@@ -113,9 +113,9 @@ if(command === "play") {
 	server.queue.push(args[1]);
 	
 	if (!message.guild.voiceConnection) message.member.voiceChannel.join.then(funcion(connection)) {
-			play(connection, message)
+	play(connection, message)
 
-	}});
+	}};
 
 	if(command === "skip") {
 		var server = servers[message.guild.id];
