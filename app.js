@@ -232,7 +232,7 @@ var member = message.mentions.users.first();
     let myembed = new Discord.RichEmbed()
         .setTitle('Server Statistics')
     	.setColor('RANDOM')
-		.addfield('Servers ', servers)
+		.addField('Servers ', servers)
         .addField('Users ', users)
         .addField('Channels ', channels)
         .setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
