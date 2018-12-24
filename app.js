@@ -13,7 +13,7 @@ const token = process.env.token;
 const config = require("./config.json");
 // config.token contains the bot's token
 // config.prefix contains the message prefix.
-const PREFIX = "!" // bot's prefix
+const PREFIX = "+" // bot's prefix
 
 
 var SourceQuery = require('sourcequery');
@@ -37,9 +37,9 @@ var eightball = [ // sets the answers to an eightball
 const fs = require('fs');
 
 const activities_list = [
-    "with Wumpus | !help", 
-    "with SynZ | !help",
-    "with Sickness | !help"
+    "with Wumpus | +help", 
+    "with SynZ | +help",
+    "with Sickness | +help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
