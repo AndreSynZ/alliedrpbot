@@ -93,7 +93,7 @@ client.on("message", async message => {
 
 
 
-case "play";
+if(command === "play") {
 	if (!args[1]) {
 		message.channel.sendMessage("Please provide a link");
 		return;
@@ -115,18 +115,20 @@ case "play";
 	if (!message.guild.voiceConnection) message.member.voiceChannel.join.then(funcion(connection)) {
 			play(connection, message);
 
-	});
-	break;
-	case "skip";
+	}});
+
+	if(command === "skip") {
 		var server = servers[message.guild.id];
 		
 		if (server.dispatcher) server.dispatcher.end();
-		break;
-	case "stop";
+	};
+
+
+	if(command === "stop") {
 		var server = servers[message.guild.id];
 		
 		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-		break;
+	};
 
 
 
