@@ -233,8 +233,8 @@ var member = message.mentions.users.first();
         .setTitle('Server Statistics')
     	.setColor('RANDOM')
 		.addField('Servers ', servers)
-        .addField('Users ', users)
-        .addField('Channels ', channels)
+        .addField('Users (In this server) ', users)
+        .addField('Channels (In this server) ', channels)
         .setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
     	message.channel.send(myembed)
     
