@@ -52,7 +52,7 @@ var eightball = [ // sets the answers to an eightball
 const fs = require('fs');
 
 const activities_list = [
-    "with Wumpus | -help", 
+    "with Flopskis | -help", 
     "with SynZ | -help",
     "with Sickness | -help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
@@ -62,7 +62,7 @@ client.on('ready', () => {
     setInterval(() => {
         const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
         client.user.setActivity(activities_list[index], { type: "STREAMING", url: "https://www.twitch.tv/somethingluulop"}); // sets bot's activities to one of the phrases in the arraylist.
-    }, 5000); // Runs this every 10 seconds.
+    }, 6000); // Runs this every 10 seconds.
 });
 
 
