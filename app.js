@@ -16,19 +16,6 @@ const config = require("./config.json");
 // config.prefix contains the message prefix.
 const PREFIX = "-" // bot's prefix
 
-function play(connection, message) {
-	var server = servers[message.guild.id];
-	
-	server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-	
-	server.queue.shift();
-	
-	server.dispatcher.on("end", function() {
-		if (server.queue[0]) play(connection, message);
-		else connection.disconnect();
-	});
-}
-
 var SourceQuery = require('sourcequery');
 
 var servers = {};
@@ -89,53 +76,13 @@ client.on("message", async message => {
   // Let's go with a few common example commands! Feel free to delete or change those.
 
 
-});
 
-
-if(command === "play") {
-	if (!args[1]) {
-		message.channel.sendMessage("Please provide a link");
-		return;
-	}
-	
-	if (!message.member.voiceChannel) {
-		message.channel.sendMessage("You must be in a voice channel");
-		return;
-	}
-	
-	if(!servers[message.guild.id]) servers[message.guild.id] = {
-		queue: []
-	};
-	
-	var server = servers[message.guild.id];
-	
-	server.queue.push(args[1]);
-	
-	if (!message.guild.voiceConnection) message.member.voiceChannel.join.then(funcion(connection)) 
-	
-	
-	play(connection, message)
-
-	};
-
-	if(command === "skip") {
-		var server = servers[message.guild.id];
-		
-		if (server.dispatcher) server.dispatcher.end();
-	};
-
-
-	if(command === "stop") {
-		var server = servers[message.guild.id];
-		
-		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-	};
-
-
-
-
-
-
+  if(command === "ping") {
+    // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
+    // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
+    const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  }
 
   if(command === "say") {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use.
@@ -148,8 +95,6 @@ if(command === "play") {
   };
   
   
-
-
 
 
 
@@ -274,7 +219,7 @@ var member = message.mentions.users.first();
      message.channel.send(myembed)
   };
 
-
+    let servers = client.guilds.size; // Server Count
     let users = 0; // Start of user count
     let channels = client.channels.size; // Channel Count
     
@@ -314,6 +259,23 @@ return rand[Math.floor(Math.random()*rand.length)];
 
 
 
+  if(command === "purge") {
+    // This command removes all messages from all users in the channel, up to 100.
+    
+    // get the delete count, as an actual number.
+    const deleteCount = parseInt(args[0], 10);
+    
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have permission to purge!");
+
+    // Ooooh nice, combined conditions. <3
+    if(!deleteCount || deleteCount < 1 || deleteCount > 100)
+      return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
+    
+    // So we get our messages, and delete them. Simple enough, right?
+    const fetched = await message.channel.fetchMessages({limit: deleteCount});
+    message.channel.bulkDelete(fetched)
+      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+
 
 
 
@@ -325,7 +287,7 @@ return rand[Math.floor(Math.random()*rand.length)];
     message.channel.send('https://discord.gg/nfcYPRw');
 
 
-  }
+  }}})
 
   
 
