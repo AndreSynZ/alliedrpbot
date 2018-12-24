@@ -2,6 +2,7 @@
 
 // Load up the discord.js library
 const Discord = require("discord.js");
+const YTDL = require("ytdl-core");
 
 // This is your client. Some people call it `bot`, some people call it `self`,
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
@@ -15,8 +16,22 @@ const config = require("./config.json");
 // config.prefix contains the message prefix.
 const PREFIX = "-" // bot's prefix
 
+function play(connection, message) {
+	var server = servers[message.guild.id];
+	
+	server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+	
+	server.queue.shift();
+	
+	server.dispatcher.on("end", function() {
+		if (server.queue[0]) play(connection, message);
+		else connection.disconnect();
+	});
+}
 
 var SourceQuery = require('sourcequery');
+
+var servers = {};
 
 
 
@@ -90,10 +105,44 @@ client.on("message", async message => {
     message.delete().catch(O_o=>{});
     // And we get the bot to say the thing:
     message.channel.send(sayMessage);
-  }
+  };
   
   
 
+case "play";
+	if (!args[1]) {
+		message.channel.sendMessage("Please provide a link");
+		return;
+	}
+	
+	if (!message.member.voiceChannel) {
+		message.channel.sendMessage("You must be in a voice channel");
+		return;
+	}
+	
+	if(!servers[message.guild.id]) servers[message.guild.id] = {
+		queue: []
+	};
+	
+	var server = servers[message.guild.id];
+	
+	server.queue.push(args[1]);
+	
+	if (!message.guild.voiceConnection) message.member.voiceChannel.join.then(funcion(connection)) {
+			play(connection, message);
+
+	});
+	break;
+	case "skip";
+		var server = servers[message.guild.id];
+		
+		if (server.dispatcher) server.dispatcher.end();
+		break;
+	case "stop";
+		var server = servers[message.guild.id];
+		
+		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+		break;
 
 
 

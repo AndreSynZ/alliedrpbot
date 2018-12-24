@@ -13,8 +13,10 @@
     "discord-leveling": "^1.0.1",
     "discord.js": "^11.4.2",
     "express": "^4.16.4",
+    "opusscript": "0.0.6",
     "sequelize": "^4.42.0",
     "sourcequery": "0.0.2",
-    "sqlite3": "^4.0.4"
+    "sqlite3": "^4.0.4",
+    "ytdl-core": "^0.28.3"
   }
 }
