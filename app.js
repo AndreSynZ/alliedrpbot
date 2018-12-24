@@ -37,7 +37,7 @@ var eightball = [ // sets the answers to an eightball
 const fs = require('fs');
 
 const activities_list = [
-    "with Wumpus | -help", 
+    "with Flopskis | -help", 
     "with SynZ | -help",
     "with Sickness | -help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
