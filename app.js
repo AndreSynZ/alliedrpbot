@@ -112,11 +112,11 @@ sq.getInfo(function(err, info){
 	.setTitle("Military RP Server Information:")
 	.setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
     .setColor('RANDOM')
-    .addField("Players:", info['players'] + "/128")
+    .addField("Players:", info['players'] + "/72")
     .addField("Map:", info['map'])
     .addField("Gamemode:", 'MilitaryRP')
     .setFooter("Bot made by Falcon | ", "https://imgur.com/IqcgMgl.png")
-    .setThumbnail("https://imgur.com/1c3iByo")
+    .setThumbnail("https://imgur.com/1c3iByo.jpg")
     .setTimestamp()
      message.channel.send(myembed)
 });
@@ -181,7 +181,7 @@ var member = message.mentions.users.first();
      .setDescription('These are all the commands that you can currently use on the bot. | ***More will be coming soon!***')
      .addField(':tools: Moderation:', '`-kick, -ban, -purge` ', true)
      .addField(':smile: Fun Commands:', '`-say, -avatar, -coinflip, -8ball` ', true)
-     .addField(':gear: Bot/Server:', '`-ping, -info, -players, -stats` ')
+     .addField(':gear: Bot/Server:', '`-ping, -info, -server, -stats` ')
 	.setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
      message.channel.send(myembed)
   };
@@ -252,7 +252,7 @@ return rand[Math.floor(Math.random()*rand.length)];
 
 
   if(command === 'invite') {
-    message.channel.send('https://discord.gg/nfcYPRw');
+    message.channel.send('https://discord.gg/kqasvNY');
 
 
   }}})
