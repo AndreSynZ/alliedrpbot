@@ -160,8 +160,23 @@ if (command == "8ball") { // creates the command 8ball
 }
 
 
+if(command === "ip") {
+var member = message.mentions.users.first();
+    let embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .addField('Server IP:', '95.216.19.150:27015')
+    message.channel.send(embed)
+};
 
-
+	if(command === "forums") {
+var member = message.mentions.users.first();
+    let embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+  .addField('Forums:', 'https://alliedroleplay.enjin.com/')
+    message.channel.send(embed)
+};
+	
+	
 
 if(command === "avatar") {
 var member = message.mentions.users.first();
@@ -181,7 +196,7 @@ var member = message.mentions.users.first();
      .setDescription('These are all the commands that you can currently use on the bot. | ***More will be coming soon!***')
      .addField(':tools: Moderation:', '`-kick, -ban, -purge` ', true)
      .addField(':smile: Fun Commands:', '`-say, -avatar, -coinflip, -8ball` ', true)
-     .addField(':gear: Bot/Server:', '`-ping, -info, -server, -stats` ')
+     .addField(':gear: Bot/Server:', '`-ping, -info, -server, -stats, -ip, -forums` ')
 	.setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
      message.channel.send(myembed)
   };
