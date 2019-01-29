@@ -14,7 +14,7 @@ const token = process.env.token;
 const config = require("./config.json");
 // config.token contains the bot's token
 // config.prefix contains the message prefix.
-const PREFIX = "-" // bot's prefix
+const PREFIX = "=" // bot's prefix
 
 var SourceQuery = require('sourcequery');
 
@@ -39,9 +39,9 @@ var eightball = [ // sets the answers to an eightball
 const fs = require('fs');
 
 const activities_list = [
-    "with Cammi | -help", 
-    "with Falcon | -help",
-    "with Spencer | -help"
+    "with Cammi | =help", 
+    "with Falcon | =help",
+    "with Spencer | =help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
@@ -140,7 +140,7 @@ sq.getInfo(function(err, info){
     .setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
     .setColor('RANDOM')
     .setDescription('This is information about the Bot!')
-    .addField(":robot: Allied RP Bot:", 'In order to see the commands avaliable, type `-help`! ', true)
+    .addField(":robot: Allied RP Bot:", 'In order to see the commands avaliable, type `=help`! ', true)
     .addField(':dog: Discord Server;', 'If you see any errors within the discord bot that needs fixing, DM Falcon! ', true)
 	.setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
     message.channel.send(myembed)
@@ -194,9 +194,9 @@ var member = message.mentions.users.first();
      .setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
      .setColor('RANDOM')
      .setDescription('These are all the commands that you can currently use on the bot. | ***More will be coming soon!***')
-     .addField(':tools: Moderation:', '`-kick, -ban, -purge` ', true)
-     .addField(':smile: Fun Commands:', '`-say, -avatar, -coinflip, -8ball` ', true)
-     .addField(':gear: Bot/Server:', '`-ping, -info, -server, -stats, -ip, -forums` ')
+     .addField(':tools: Moderation:', '`=kick, =ban, =purge` ', true)
+     .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip, =8ball` ', true)
+     .addField(':gear: Bot/Server:', '`=ping, =info, =server, =stats, =ip, =forums` ')
 	.setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
      message.channel.send(myembed)
   };
