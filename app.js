@@ -39,9 +39,9 @@ var eightball = [ // sets the answers to an eightball
 const fs = require('fs');
 
 const activities_list = [
-    "with Flopskis | -help", 
-    "with SynZ | -help",
-    "with Sickness | -help"
+    "with Cammi | -help", 
+    "with Falcon | -help",
+    "with Spencer | -help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
@@ -97,87 +97,62 @@ client.on("message", async message => {
   
 
 
-
-  if(command === "kick") {
-   
- 
-  
-    let kUser = message.guild.member(message.mentions.users.first()  ||  message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send("That wasn't valid, type this: ``-kick <person> <reason>``.");
-    let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have permission to kick people!");
-    if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("That person cannot be kicked!")
-
-    let kickEmbed = new Discord.RichEmbed()
-    .setDescription("kick")
-    .setColor('RANDOM')
-    .addField("Kicked user", `${kUser} with ID ${kUser.ID}`)
-    .addField("Kicked by", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Kicked In", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", kReason)
-	.setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png");
 	
-    let kickChannel = message.guild.channels.find(`name`, "synz-logs");
-    if(!kickChannel) return message.channel.send("Can't find general channel");
-    
+	
+	      if(command === 'server') {
+  
+  var sq = new SourceQuery(1000); // 1000ms timeout
+sq.open('95.216.19.150', 27015);
+ 
 
-    message.guild.member(kUser).kick(kReason);
-    kickChannel.send(kickEmbed);
 
-    return;
-  }
+ 
+sq.getInfo(function(err, info){
+    let myembed = new Discord.RichEmbed ()
+	.setTitle("Military RP Server Information:")
+	.setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
+    .setColor('RANDOM')
+    .addField("Players:", info['players'] + "/128")
+    .addField("Map:", info['map'])
+    .addField("Gamemode:", 'MilitaryRP')
+    .setFooter("Bot made by Falcon | ", "https://imgur.com/IqcgMgl.png")
+    .setThumbnail("https://imgur.com/1c3iByo")
+    .setTimestamp()
+     message.channel.send(myembed)
+});
+ 
+ };
+	
+	
+	
+	
+	
+	
+	
+
+
 
 
 
   if(command === "info") {
     let myembed = new Discord.RichEmbed()
     .setTitle('Information!')
-    .setAuthor("SynZ's Bot", "https://imgur.com/IqcgMgl.png")
+    .setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
     .setColor('RANDOM')
     .setDescription('This is information about the Bot!')
-    .addField(":robot: SynZ's Bot:", 'In order to see the commands avaliable, type `-help`! ', true)
-    .addField(':dog: Discord Server;', 'If you see any errors within the discord bot that needs fixing, hmu! ', true)
-	.setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
+    .addField(":robot: Allied RP Bot:", 'In order to see the commands avaliable, type `-help`! ', true)
+    .addField(':dog: Discord Server;', 'If you see any errors within the discord bot that needs fixing, DM Falcon! ', true)
+	.setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
     message.channel.send(myembed)
  }
 
-  if(command === "ban"){
 
-    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send("That wasn't valid, type this: ``-ban <person> <reason>``.");
-    let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have permission to ban people!");
-    if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send("That person can't be banned!");
-
-    let banEmbed = new Discord.RichEmbed()
-    .setDescription("Ban")
-    .setColor('RANDOM')
-    .addField("Banned User", `${bUser} with ID ${bUser.id}`)
-    .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Banned In", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", bReason)
-	.setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png");
-
-    let incidentchannel = message.guild.channels.find(`name`, "synz-logs");
-    if(!incidentchannel) return message.channel.send("Can't find general channel");
-
-    message.guild.member(bUser).ban(bReason);
-    incidentchannel.send(banEmbed);
-
-
-    return;
-  }
 
 
 
 
   
-  if (command == "cookie") { // creates the command cookie
-    if (args[0]) message.channel.send(message.author.toString() + " has given " + args[0].toString() + " a cookie! :cookie:") // sends the message saying someone has given someone else a cookie if someone mentions someone else
-    else message.channel.send("Who do you want to give a cookie to? :cookie: (Correct usage: =cookie @username)") // sends the error message if no-one is mentioned
-}
+
 
 if (command == "8ball") { // creates the command 8ball
   if (args[0] != null) message.reply(eightball[Math.floor(Math.random() * eightball.length).toString(16)]); // if args[1], post random answer
@@ -185,15 +160,7 @@ if (command == "8ball") { // creates the command 8ball
 }
 
 
-if (command == "milk") { // creates the command milk
-  if (args[0]) message.channel.send(message.author.toString() + " has given " + args[0].toString() + " a glass of milk! :milk:") // sends the message saying someone has given someone else a cookie if someone mentions someone else
-  else message.channel.send("Who do you want to give a glass of milk to? :milk:  (Correct usage: =milk @username)") // sends the error message if no-one is mentioned
-}
 
-if (command == "kill") { // creates the command kill
-  if (args[0]) message.channel.send(message.author.toString() + " just killed " + args[0].toString() + " holy shizzle! :gun:") // sends the message saying someone has given someone else a cookie if someone mentions someone else
-  else message.channel.send("Who do you want to kill? :gun: (Correct usage: =kill @username)") // sends the error message if no-one is mentioned
-}
 
 
 if(command === "avatar") {
@@ -209,13 +176,13 @@ var member = message.mentions.users.first();
   if(command === "help") {
      let myembed = new Discord.RichEmbed()
      .setTitle('Commands')
-     .setAuthor("SynZ's Bot", "https://imgur.com/IqcgMgl.png")
+     .setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
      .setColor('RANDOM')
      .setDescription('These are all the commands that you can currently use on the bot. | ***More will be coming soon!***')
      .addField(':tools: Moderation:', '`-kick, -ban, -purge` ', true)
-     .addField(':smile: Fun Commands:', '`-say, -cookie, -avatar, -milk, -coinflip, -8ball, -kill` ', true)
-     .addField(':gear: Bot/Server:', '`-ping, -info, -stats` ')
-	.setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
+     .addField(':smile: Fun Commands:', '`-say, -avatar, -coinflip, -8ball` ', true)
+     .addField(':gear: Bot/Server:', '`-ping, -info, -players, -stats` ')
+	.setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
      message.channel.send(myembed)
   };
 
@@ -235,7 +202,7 @@ var member = message.mentions.users.first();
 		.addField('Servers ', servers)
         .addField('Users (In this server) ', users)
         .addField('Channels (In this server) ', channels)
-        .setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
+        .setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
     	message.channel.send(myembed)
     
 };
@@ -251,10 +218,10 @@ return rand[Math.floor(Math.random()*rand.length)];
 }
     let myembed = new Discord.RichEmbed()
     .setTitle('You got..')
-    .setAuthor("SynZ's Bot", "https://imgur.com/IqcgMgl.png")
+    .setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
     .setColor('RANDOM')
     .setDescription(doRandHT())
-    .setFooter("Bot made by SynZ", "https://imgur.com/IqcgMgl.png")
+    .setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
     message.channel.send(myembed)
  };
 
