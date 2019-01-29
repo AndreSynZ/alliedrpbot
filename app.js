@@ -214,9 +214,8 @@ var member = message.mentions.users.first();
     let myembed = new Discord.RichEmbed()
         .setTitle('Server Statistics')
     	.setColor('RANDOM')
-		.addField('Servers ', servers)
-        .addField('Users (In this server) ', users)
-        .addField('Channels (In this server) ', channels)
+        .addField('Users:', users)
+        .addField('Channels:', channels)
         .setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
     	message.channel.send(myembed)
     
