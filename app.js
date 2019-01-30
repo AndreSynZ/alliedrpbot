@@ -151,6 +151,37 @@ sq.getInfo(function(err, info){
 
 
 
+		      if(command === 'players') {
+  
+  var sq = new SourceQuery(1000); // 1000ms timeout
+sq.open('95.216.19.150', 27015);
+ 
+
+
+ 
+sq.getPlayers(function(err, players){
+    let myembed = new Discord.RichEmbed ()
+    let playersString = "";
+    players.forEach(ply => {
+        playersString += ply.name + '\n';
+    })
+    myembed.setTitle("Players Currently Online:")
+    myembed.setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
+    myembed.setDescription(playersString)
+    myembed.addField('Total Players Online:', players.length + '/72')
+    myembed.setColor('RANDOM')
+    myembed.setFooter("Bot made by Falcon | ", "https://imgur.com/IqcgMgl.png")
+    myembed.setThumbnail("https://imgur.com/1c3iByo.jpg")
+    myembed.setTimestamp()	
+    message.channel.send(myembed);
+})};
+	
+	
+	
+	
+	
+	
+	
   
 
 
