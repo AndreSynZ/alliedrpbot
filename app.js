@@ -227,7 +227,7 @@ var member = message.mentions.users.first();
      .setDescription('These are all the commands that you can currently use on the bot. | ***More will be coming soon!***')
      .addField(':tools: Moderation:', '`=kick, =ban, =purge` ', true)
      .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip, =8ball` ', true)
-     .addField(':gear: Bot/Server:', '`=ping, =info, =server, =stats, =ip, =forums` ')
+     .addField(':gear: Bot/Server:', '`=ping, =info, =server, =players, =stats, =ip, =forums` ')
 	.setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
      message.channel.send(myembed)
   };
