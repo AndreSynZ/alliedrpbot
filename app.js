@@ -22,14 +22,7 @@ var servers = {};
 
 
 
-var eightball = [ // sets the answers to an eightball
-  ":8ball: | Yes!",
-  ":8ball: | No.",
-  ":8ball: | Maybe.",
-  ":8ball: | Probably!",
-  ":8ball: | I don't think so.",
-  ":8ball: | Maybe.",
-]
+
 
 
 
@@ -39,9 +32,9 @@ var eightball = [ // sets the answers to an eightball
 const fs = require('fs');
 
 const activities_list = [
-    "with Cammi | =help", 
-    "with Falcon | =help",
-    "with Spencer | =help"
+    "with James | =help", 
+    "with Archer | =help",
+    "with Joking | =help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
@@ -102,7 +95,7 @@ client.on("message", async message => {
 	      if(command === 'server') {
   
   var sq = new SourceQuery(1000); // 1000ms timeout
-sq.open('95.216.19.150', 27015);
+sq.open('54.37.244.50', 27015);
  
 
 
@@ -110,13 +103,13 @@ sq.open('95.216.19.150', 27015);
 sq.getInfo(function(err, info){
     let myembed = new Discord.RichEmbed ()
 	.setTitle("Military RP Server Information:")
-	.setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
+	.setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
     .setColor('RANDOM')
-    .addField("Players:", info['players'] + "/72")
+    .addField("Players:", info['players'] + "/60")
     .addField("Map:", info['map'])
     .addField("Gamemode:", 'MilitaryRP')
-    .setFooter("Bot made by Falcon | ", "https://imgur.com/IqcgMgl.png")
-    .setThumbnail("https://imgur.com/1c3iByo.jpg")
+    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
+    .setThumbnail("https://imgur.com/cynJ0Yp.png")
     .setTimestamp()
      message.channel.send(myembed)
 });
@@ -134,19 +127,6 @@ sq.getInfo(function(err, info){
 
 
 
-  if(command === "info") {
-    let myembed = new Discord.RichEmbed()
-    .setTitle('Information!')
-    .setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
-    .setColor('RANDOM')
-    .setDescription('This is information about the Bot!')
-    .addField(":robot: Allied RP Bot:", 'In order to see the commands avaliable, type `=help`! ', true)
-    .addField(':dog: Discord Server;', 'If you see any errors within the discord bot that needs fixing, DM Falcon! ', true)
-	.setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
-    message.channel.send(myembed)
- }
-
-
 
 
 
@@ -154,7 +134,7 @@ sq.getInfo(function(err, info){
 		      if(command === 'players') {
   
   var sq = new SourceQuery(1000); // 1000ms timeout
-sq.open('95.216.19.150', 27015);
+sq.open('54.37.244.50', 27015);
  
 
 
@@ -166,12 +146,12 @@ sq.getPlayers(function(err, players){
         playersString += ply.name + '\n';
     })
     myembed.setTitle("Players Currently Online:")
-    myembed.setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
+    myembed.setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
     myembed.setDescription(playersString)
-    myembed.addField('Total Players Online:', players.length + '/72')
+    myembed.addField('Total Players Online:', players.length + '/60')
     myembed.setColor('RANDOM')
-    myembed.setFooter("Bot made by Falcon | ", "https://imgur.com/IqcgMgl.png")
-    myembed.setThumbnail("https://imgur.com/1c3iByo.jpg")
+    myembed.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
+    myembed.setThumbnail("https://imgur.com/cynJ0Yp.png")
     myembed.setTimestamp()	
     message.channel.send(myembed);
 })};
@@ -185,17 +165,13 @@ sq.getPlayers(function(err, players){
   
 
 
-if (command == "8ball") { // creates the command 8ball
-  if (args[0] != null) message.reply(eightball[Math.floor(Math.random() * eightball.length).toString(16)]); // if args[1], post random answer
-  else message.channel.send("Ummmm, what is your question? :8ball: (Correct usage: =8ball <question>)"); // if not, error
-}
 
 
 if(command === "ip") {
 var member = message.mentions.users.first();
     let embed = new Discord.RichEmbed()
   .setColor('RANDOM')
-  .addField('Server IP:', '95.216.19.150:27015')
+  .addField('Server IP:', '54.37.244.50:27015')
     message.channel.send(embed)
 };
 
@@ -203,7 +179,7 @@ var member = message.mentions.users.first();
 var member = message.mentions.users.first();
     let embed = new Discord.RichEmbed()
   .setColor('RANDOM')
-  .addField('Forums:', 'https://alliedroleplay.enjin.com/')
+  .addField('Forums:', 'http://noxiousnetworks.co.uk/main/forums/index.php')
     message.channel.send(embed)
 };
 	
@@ -222,13 +198,12 @@ var member = message.mentions.users.first();
   if(command === "help") {
      let myembed = new Discord.RichEmbed()
      .setTitle('Commands')
-     .setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
+     .setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
      .setColor('RANDOM')
-     .setDescription('These are all the commands that you can currently use on the bot. | ***More will be coming soon!***')
-     .addField(':tools: Moderation:', '`=kick, =ban, =purge` ', true)
-     .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip, =8ball` ', true)
-     .addField(':gear: Bot/Server:', '`=ping, =info, =server, =players, =stats, =ip, =forums` ')
-	.setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
+     .setDescription('These are all the commands that you can currently use on the bot.)
+     .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip` ', true)
+     .addField(':gear: Bot/Server:', '`=ping, =server, =players, =stats, =ip, =forums` ')
+	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
      message.channel.send(myembed)
   };
 
@@ -247,7 +222,7 @@ var member = message.mentions.users.first();
     	.setColor('RANDOM')
         .addField('Users:', users)
         .addField('Channels:', channels)
-        .setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
+        .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
     	message.channel.send(myembed)
     
 };
@@ -261,33 +236,19 @@ var rand = ['HEADS!','TAILS!'];
 
 return rand[Math.floor(Math.random()*rand.length)];
 }
+	
+	
     let myembed = new Discord.RichEmbed()
     .setTitle('You got..')
-    .setAuthor("Allied RP Bot", "https://imgur.com/1c3iByo.jpg")
+    .setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
     .setColor('RANDOM')
     .setDescription(doRandHT())
-    .setFooter("Bot made by Falcon", "https://imgur.com/IqcgMgl.png")
+    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
     message.channel.send(myembed)
  };
 
 
 
-  if(command === "purge") {
-    // This command removes all messages from all users in the channel, up to 100.
-    
-    // get the delete count, as an actual number.
-    const deleteCount = parseInt(args[0], 10);
-    
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have permission to purge!");
-
-    // Ooooh nice, combined conditions. <3
-    if(!deleteCount || deleteCount < 1 || deleteCount > 100)
-      return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
-    
-    // So we get our messages, and delete them. Simple enough, right?
-    const fetched = await message.channel.fetchMessages({limit: deleteCount});
-    message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 
 
 
@@ -295,9 +256,6 @@ return rand[Math.floor(Math.random()*rand.length)];
 
 
 
-
-  if(command === 'invite') {
-    message.channel.send('https://discord.gg/kqasvNY');
 
 
   }}})
