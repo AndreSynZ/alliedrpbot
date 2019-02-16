@@ -200,7 +200,7 @@ var member = message.mentions.users.first();
      .setTitle('Commands')
      .setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
      .setColor('RANDOM')
-     .setDescription('These are all the commands that you can currently use on the bot.)
+     .setDescription('These are all the commands that you can currently use on the bot.')
      .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip` ', true)
      .addField(':gear: Bot/Server:', '`=ping, =server, =players, =stats, =ip, =forums` ')
 	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
