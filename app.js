@@ -24,7 +24,10 @@ var servers = {};
 
 
 
-
+const colorlist = [
+	"#675645",
+	"#e1d798"
+	];
 
 
 
@@ -104,7 +107,7 @@ sq.getInfo(function(err, info){
     let myembed = new Discord.RichEmbed ()
 	.setTitle("Military RP Server Information:")
 	.setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
-    .setColor('RANDOM')
+    .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(10)])
     .addField("Players:", info['players'] + "/60")
     .addField("Map:", info['map'])
     .addField("Gamemode:", 'MilitaryRP')
