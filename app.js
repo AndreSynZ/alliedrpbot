@@ -224,7 +224,7 @@ var member = message.mentions.users.first();
 	if(command == "stats")
 {
     let myembed = new Discord.RichEmbed()
-        .setTitle('Server Statistics')
+        .setTitle('Discord Server Statistics')
     	.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
         .addField('Users:', users)
         .addField('Channels:', channels)
