@@ -258,7 +258,7 @@ return rand[Math.floor(Math.random()*rand.length)];
 
 
 
-  }}})
+  })
 
   
 
