@@ -155,7 +155,7 @@ sq.getPlayers(function(err, players){
     myembed.setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
     myembed.setDescription(playersString)
     myembed.addField('Total Players Online:', players.length + '/60')
-    myembed.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(10)])
+    myembed.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
     myembed.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
     myembed.setThumbnail("https://imgur.com/cynJ0Yp.png")
     myembed.setTimestamp()	
@@ -176,7 +176,7 @@ sq.getPlayers(function(err, players){
 if(command === "ip") {
 var member = message.mentions.users.first();
     let embed = new Discord.RichEmbed()
-  .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(10)])
+  .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
   .addField('Server IP:', '54.37.244.50:27015')
     message.channel.send(embed)
 };
@@ -184,7 +184,7 @@ var member = message.mentions.users.first();
 	if(command === "forums") {
 var member = message.mentions.users.first();
     let embed = new Discord.RichEmbed()
-  .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(10)])
+  .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
   .addField('Forums:', 'http://noxiousnetworks.co.uk/main/forums/index.php')
     message.channel.send(embed)
 };
@@ -194,7 +194,7 @@ var member = message.mentions.users.first();
 if(command === "avatar") {
 var member = message.mentions.users.first();
     let embed = new Discord.RichEmbed()
-  .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(10)])
+  .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
   .setImage(message.author.avatarURL)
     message.channel.send(embed)
 };
@@ -205,7 +205,7 @@ var member = message.mentions.users.first();
      let myembed = new Discord.RichEmbed()
      .setTitle('Commands')
      .setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
-     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(10)])
+     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
      .setDescription('These are all the commands that you can currently use on the bot.')
      .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip` ', true)
      .addField(':gear: Bot/Server:', '`=ping, =server, =players, =stats, =ip, =forums` ')
@@ -225,7 +225,7 @@ var member = message.mentions.users.first();
 {
     let myembed = new Discord.RichEmbed()
         .setTitle('Server Statistics')
-    	.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(10)])
+    	.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
         .addField('Users:', users)
         .addField('Channels:', channels)
         .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
@@ -247,7 +247,7 @@ return rand[Math.floor(Math.random()*rand.length)];
     let myembed = new Discord.RichEmbed()
     .setTitle('You got..')
     .setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
-    .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(10)])
+    .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
     .setDescription(doRandHT())
     .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
     message.channel.send(myembed)
