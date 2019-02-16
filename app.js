@@ -109,7 +109,7 @@ sq.open('54.37.244.50', 27015);
 sq.getInfo(function(err, info){
     let myembed = new Discord.RichEmbed ()
 	.setTitle("Military RP Server Information:")
-	.setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
+	.setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
     .addField("Players:", info['players'] + "/60")
     .addField("Map:", info['map'])
@@ -152,7 +152,7 @@ sq.getPlayers(function(err, players){
         playersString += ply.name + '\n';
     })
     myembed.setTitle("Players Currently Online:")
-    myembed.setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
+    myembed.setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
     myembed.setDescription(playersString)
     myembed.addField('Total Players Online:', players.length + '/60')
     myembed.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
@@ -204,7 +204,7 @@ var member = message.mentions.users.first();
   if(command === "help") {
      let myembed = new Discord.RichEmbed()
      .setTitle('Commands')
-     .setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
+     .setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
      .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
      .setDescription('These are all the commands that you can currently use on the bot.')
      .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip` ', true)
@@ -246,7 +246,7 @@ return rand[Math.floor(Math.random()*rand.length)];
 	
     let myembed = new Discord.RichEmbed()
     .setTitle('You got..')
-    .setAuthor("Navy SEALs Bot", "https://imgur.com/cynJ0Yp.png")
+    .setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
     .setDescription(doRandHT())
     .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
