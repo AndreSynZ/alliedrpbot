@@ -246,7 +246,7 @@ var member = message.mentions.users.first();
      .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
      .setDescription('These are all the commands that you can currently use on the bot.')
      .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip` ', true)
-     .addField(':gear: Bot/Server:', '`=ping, =server, =players, =stats, =ip, =forums` ')
+     .addField(':gear: Bot/Server:', '`=ping, =server, =players, =stats, =suggest, =ip, =forums` ')
 	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
      message.channel.send(myembed)
   };
