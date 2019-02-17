@@ -164,7 +164,45 @@ sq.getPlayers(function(err, players){
 	
 	
 	
+	if(command === 'suggest') {
+
+
 	
+if (!args[1]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`')
+
+
+let sugembed = new Discord.RichEmbed()
+	.setAuthor('Suggestion Created By: ' + `${message.member.user.tag}`, message.author.avatarURL)
+	.setDescription(args.join(' '))
+	.setColor('RANDOM')
+	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
+    	.setThumbnail("https://imgur.com/cynJ0Yp.png")
+	.setTimestamp()
+
+    let sugchannel = message.guild.channels.find(`name`, "suggestions")
+    if(!sugchannel) return message.channel.send("Can't find suggestions channel")
+
+    sugchannel.send(sugembed)
+
+
+	
+	
+            .then(function (message) {
+              message.react("✅")
+              message.react("❌")
+            }).catch(function() {
+              //Something
+             })};
+	
+	
+
+	if(command === 'suggest') {
+
+
+	
+if (!args[1]) return message.channel.send('')
+		
+	message.channel.send('Thank you for your suggestion!')};
 	
 	
 	
