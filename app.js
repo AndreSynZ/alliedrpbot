@@ -179,7 +179,7 @@ let sugembed = new Discord.RichEmbed()
     	.setThumbnail("https://imgur.com/cynJ0Yp.png")
 	.setTimestamp()
 
-    let sugchannel = message.guild.channels.find(`name`, "suggestions")
+    let sugchannel = message.guild.channels.find(x => x.name === "suggestions")
     if(!sugchannel) return message.channel.send("Can't find suggestions channel")
 
     sugchannel.send(sugembed)
