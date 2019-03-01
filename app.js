@@ -155,7 +155,7 @@ sq.getInfo(function(err, info){
 		
 		let testingembed = new Discord.RichEmbed()
 		.setAuthor("Person Going LOA: " + `${message.member.user.tag}`, message.author.avatarURL)
-		.addField('Reason:', args[2])
+		.addField('Reason:', args[0])
 		.addField('Time Left:', args[3])
 		.setColor('RANDOM')
 		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
