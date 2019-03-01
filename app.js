@@ -151,7 +151,7 @@ sq.getInfo(function(err, info){
 	if(command === 'loa') {
 		if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permission to use this command.')
 		if (!args[0]) return message.channel.send("Proper Usage: `=loa <reason> <days until return>(Atleast four words in the LOA text is needed)`")
-		if (!args[5]) return message.channel.send('Proper Usage: `=loa <reason> <days until return(Maximum four words in the LOA text is allowed.)`')
+		if (!args[4]) return message.channel.send('Proper Usage: `=loa <reason> <days until return(Maximum four words in the LOA text is allowed.)`')
 		
 		let testingembed = new Discord.RichEmbed()
 		.setAuthor("Person Going LOA: " + `${message.member.user.tag}`, message.author.avatarURL)
