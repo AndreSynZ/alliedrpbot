@@ -150,8 +150,12 @@ sq.getInfo(function(err, info){
 
 	if(command === 'test') {
 		if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permission to use this command.')
-		if (!args[0]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`')
-		if (!args[3]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`')
+		if (!args[0]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`');
+		if (!args[3]) return 
+		let newembed = new Discord.RichEmbed()
+		.setDescription('ya muddas')
+		
+		message.channel.send(newembed);
 		
 		let testingembed = new Discord.RichEmbed()
 		.setAuthor("Person Going LOA: " + `${message.member.user.tag}`, message.author.avatarURL)
