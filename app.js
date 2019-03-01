@@ -136,7 +136,6 @@ sq.getInfo(function(err, info){
 		if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permission to use this command.')
 		
 		let testembed = new Discord.RichEmbed()
-		.setTitle('Discord Update')
 		.setDescription('- ' + args.join(" "))
 		.setColor('#4295f4')
 		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
