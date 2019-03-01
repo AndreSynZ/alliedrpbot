@@ -137,7 +137,7 @@ sq.getInfo(function(err, info){
 		
 		let testembed = new Discord.RichEmbed()
 		.setDescription('- ' + args.join(" "))
-		.setColor('#4295f4')
+		.setColor('RANDOM')
 		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
 		
 		message.delete().catch(O_o=>{});
@@ -147,6 +147,12 @@ sq.getInfo(function(err, info){
 
 
 
+	
+	
+	
+
+	
+	
 
 
 
