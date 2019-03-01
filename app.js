@@ -150,13 +150,13 @@ sq.getInfo(function(err, info){
 
 	if(command === 'test') {
 		if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permission to use this command.')
-		if (!args[0]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`')
-		if (!args[1]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`')
+		if (!args[2]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`')
+		if (!args[3]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`')
 		
 		let testingembed = new Discord.RichEmbed()
-		.setAuthor(`${message.member.user.tag}`+ message.author.avatarURL + 'Is going LOA!')
-		.addField('Reason:', args[0])
-		.addField('Time Left:', args[1])
+		.setAuthor(`${message.member.user.tag}`+ " " + message.author.avatarURL + 'Is going LOA!')
+		.addField('Reason:', args[2])
+		.addField('Time Left:', args[3])
 		.setColor('RANDOM')
 		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
 	
