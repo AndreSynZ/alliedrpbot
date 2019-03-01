@@ -151,12 +151,12 @@ sq.getInfo(function(err, info){
 	if(command === 'loa') {
 		if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permission to use this command.')
 		if (!args[0]) return message.channel.send("Proper Usage: `=loa <reason> <days until return>(Atleast four words in the LOA text is needed)`")
-		if (!args[3]) return message.channel.send('Proper Usage: `=loa <reason> <days until return(Maximum four words in the LOA text is allowed.)`')
+		if (!args[4]) return message.channel.send('Proper Usage: `=loa <reason> <days until return(Maximum four words in the LOA text is allowed.)`')
 		
 		let testingembed = new Discord.RichEmbed()
 		.setAuthor("Person Going LOA: " + `${message.member.user.tag}`, message.author.avatarURL)
 		.addField('Reason:', args[1] + " " + args[2] + " " + args[3])
-		.addField('Time Left:', args[4])
+		.addField('Time Left:', args[5])
 		.setColor('RANDOM')
 		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
 	
