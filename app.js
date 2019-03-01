@@ -147,7 +147,20 @@ sq.getInfo(function(err, info){
 
 
 
-	
+		if (command === 'admininfo') {
+		
+		 
+		if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permission to use this command.')
+		
+		let testembed = new Discord.RichEmbed()
+		.addField('Useful Binds', 'bind "g" "say /me Advace" /nbind "h" "say /me Pats on back" /nbind "j" "say /me Group up" /nbind "k" "say /me Hold up" /nBind "l" "say /me Strips Weapons, Comms, Suicide Pills and anything else"')
+		.setColor('RANDOM')
+		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
+		
+		message.delete().catch(O_o=>{});
+		
+		message.channel.send(testembed)
+	};
 	
 	
 
