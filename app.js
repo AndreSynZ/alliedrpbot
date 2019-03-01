@@ -160,6 +160,11 @@ sq.getInfo(function(err, info){
 		.setColor('RANDOM')
 		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
 	
+		message.delete().catch(O_o=>{});
+		
+		    let sugchannel = message.guild.channels.find(x => x.name === "loa")
+    if(!sugchannel) return message.channel.send("Can't find loa channel")
+		
 		message.channel.send(testingembed)
  };
 
