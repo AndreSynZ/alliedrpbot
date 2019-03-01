@@ -157,7 +157,7 @@ sq.getInfo(function(err, info){
 		message.channel.send(zeroembed);
 		
 		
-		if (!args[6]) return 
+		if (!args[3]) return 
 		let sixembed = new Discord.RichEmbed()
 		.setDescription('ya muddas')
 		
