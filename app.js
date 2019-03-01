@@ -154,7 +154,7 @@ sq.getInfo(function(err, info){
 		if (!args[1]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`')
 		
 		let testingembed = new Discord.RichEmbed()
-		.setAuthor(`${message.member.user.tag}`, message.author.avatarURL + 'Is going LOA!')
+		.setAuthor(`${message.member.user.tag}`+ message.author.avatarURL + 'Is going LOA!')
 		.addField('Reason:', args[0])
 		.addField('Time Left:', args[1])
 		.setColor('RANDOM')
