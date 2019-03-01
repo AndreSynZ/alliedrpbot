@@ -150,8 +150,8 @@ sq.getInfo(function(err, info){
 
 	if(command === 'test') {
 		if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permission to use this command.')
-		if (!args[0]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`');
-		if (!args[6]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`');
+		if (!args[0]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast six words in the LOA text is needed [six words in total including date and reason after the "=loa" command])`');
+		if (!args[5]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Maximum six words in the LOA is allowed.[six words in total including date and reason after the "=loa" command.])`');
 		
 		let testingembed = new Discord.RichEmbed()
 		.setAuthor("Person Going LOA: " + `${message.member.user.tag}`, message.author.avatarURL)
