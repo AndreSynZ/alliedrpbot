@@ -220,7 +220,7 @@ sq.getInfo(function(err, info){
     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
     .addField("Players:", info['players'] + "/45")
     .addField("Map:", info['map'])
-    .addField("Gamemode:", info['game'])
+    .addField("Gamemode:", "MilitaryRP")
     .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
     .setThumbnail("https://imgur.com/zAOqsEP.png")
     .setTimestamp()
