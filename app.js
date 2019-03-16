@@ -199,6 +199,46 @@ sq.getPlayers(function(err, players){
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	      if(command === 'server') {
+  
+  var sq = new SourceQuery(1000); // 1000ms timeout
+sq.open('51.75.174.10', 27018);
+ 
+
+
+ 
+sq.getInfo(function(err, info){
+    let myembed = new Discord.RichEmbed ()
+	.setTitle("Server Information:")
+	.setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
+    .setColor('RANDOM')
+    .addField("Players:", info['players'] + "/45")
+    .addField("Map:", info['map'])
+    .addField("Gamemode:", info['game'])
+    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
+    .setThumbnail("https://imgur.com/zAOqsEP.png")
+    .setTimestamp()
+     message.channel.send(myembed)
+});
+ 
+ };
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	if(command === 'suggest') {
 
 
