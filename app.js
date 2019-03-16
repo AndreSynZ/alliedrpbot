@@ -98,29 +98,7 @@ client.on("message", async message => {
 
 	
 	
-	      if(command === 'server') {
-  
-  var sq = new SourceQuery(1000); // 1000ms timeout
-sq.open('54.37.244.50', 27015);
- 
 
-
- 
-sq.getInfo(function(err, info){
-    let myembed = new Discord.RichEmbed ()
-	.setTitle("Military RP Server Information:")
-	.setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
-    .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-    .addField("Players:", info['players'] + "/60")
-    .addField("Map:", info['map'])
-    .addField("Gamemode:", 'MilitaryRP')
-    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
-    .setThumbnail("https://imgur.com/cynJ0Yp.png")
-    .setTimestamp()
-     message.channel.send(myembed)
-});
- 
- };
 	
 	
 	
