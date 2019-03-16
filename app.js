@@ -200,7 +200,7 @@ sq.getInfo(function(err, info){
     .addField("Map:", info['map'])
     .addField("Gamemode:", "MilitaryRP")
     .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
-    .setThumbnail("https://imgur.com/zAOqsEP.png")
+    .setThumbnail("https://imgur.com/cynJ0Yp.png")
     .setTimestamp()
      message.channel.send(myembed)
 });
