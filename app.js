@@ -217,7 +217,7 @@ sq.getInfo(function(err, info){
     let myembed = new Discord.RichEmbed ()
 	.setTitle("Server Information:")
 	.setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
-    .setColor('RANDOM')
+    .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
     .addField("Players:", info['players'] + "/45")
     .addField("Map:", info['map'])
     .addField("Gamemode:", info['game'])
