@@ -40,7 +40,7 @@ const fs = require('fs');
 const activities_list = [
     "with James | =help", 
     "with Archer | =help",
-    "with Joking | =help"
+    "with Alan | =help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
