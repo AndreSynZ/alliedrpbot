@@ -268,7 +268,7 @@ if(command === "ip") {
 var member = message.mentions.users.first();
     let embed = new Discord.RichEmbed()
   .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-  .addField('Server IP:', '54.37.244.50:27015')
+  .addField('Server IP:', '51.75.174.10:27018')
     message.channel.send(embed)
 };
 
@@ -276,7 +276,7 @@ var member = message.mentions.users.first();
 var member = message.mentions.users.first();
     let embed = new Discord.RichEmbed()
   .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-  .addField('Forums:', 'http://noxiousnetworks.co.uk/main/forums/index.php')
+  .addField('Forums:', 'https://carbonmrp.mistforums.com/')
     message.channel.send(embed)
 };
 	
