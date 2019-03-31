@@ -78,11 +78,7 @@ client.on("message", async message => {
 	
 	
 	
-	client.on("guildMemberAdd", member => {
-  console.log('User' + member.user.tag + 'has joined the server!')
-var role = member.guild.find(x => x.name === "Other")
-    member.addRole(role)
-	});
+
 
 	
 	
