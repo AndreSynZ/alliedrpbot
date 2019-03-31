@@ -75,6 +75,19 @@ client.on("message", async message => {
   // Let's go with a few common example commands! Feel free to delete or change those.
 
 
+	
+	
+	
+	client.on('guildMemberAdd', member => {
+var Role = message.guild.roles.find(x => x.name === "Other")
+    message.member.addRole(Role)
+	})
+
+	
+	
+	
+	
+	
 
   if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
