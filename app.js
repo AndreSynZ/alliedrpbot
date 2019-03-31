@@ -38,7 +38,7 @@ const colorlist = [
 const fs = require('fs');
 
 const activities_list = [
-    "with James | =help", 
+    "with Air | =help", 
     "with Archer | =help",
     "with Alan | =help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
@@ -170,7 +170,7 @@ sq.getPlayers(function(err, players){
     myembed.addField('Total Players Online:', players.length + '/45')
     myembed.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
     myembed.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
-    myembed.setThumbnail("https://imgur.com/cynJ0Yp.png")
+    myembed.setThumbnail("https://cdn.discordapp.com/attachments/551802691488055325/561907561750724629/navy.png")
     myembed.setTimestamp()	
     message.channel.send(myembed);
 })};
