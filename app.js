@@ -78,10 +78,10 @@ client.on("message", async message => {
 	
 	
 	
-	bot.on('guildMemberAdd', member => {
+	client.on('guildMemberAdd', member => {
   console.log('User' + member.user.tag + 'has joined the server!');
 var Role = message.guild.roles.find(x => x.name === "Other")
-    message.member.addRole(Role)
+    member.addRole(Role)
 	})
 
 	
