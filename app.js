@@ -116,7 +116,7 @@ client.on("message", async message => {
 		let testembed = new Discord.RichEmbed()
 		.setDescription('- ' + args.join(" "))
 		.setColor('RANDOM')
-		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
+		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
 		
 		message.delete().catch(O_o=>{});
 		
@@ -136,7 +136,7 @@ client.on("message", async message => {
 		.addField('Reason:', args[0] + " " + args[1] + " " + args[2])
 		.addField('Time Left:', args[4])
 		.setColor('RANDOM')
-		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
+		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
 	
 				    let sugchannel = message.guild.channels.find(x => x.name === "loa")
     if(!sugchannel) return message.channel.send("Can't find loa channel")
@@ -169,7 +169,7 @@ sq.getPlayers(function(err, players){
     myembed.setDescription(playersString)
     myembed.addField('Total Players Online:', players.length + '/45')
     myembed.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-    myembed.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
+    myembed.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
     myembed.setThumbnail("https://cdn.discordapp.com/attachments/551802691488055325/561907561750724629/navy.png")
     myembed.setTimestamp()	
     message.channel.send(myembed);
@@ -199,8 +199,8 @@ sq.getInfo(function(err, info){
     .addField("Players:", info['players'] + "/45")
     .addField("Map:", info['map'])
     .addField("Gamemode:", "MilitaryRP")
-    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
-    .setThumbnail("https://imgur.com/cynJ0Yp.png")
+    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
+    .setThumbnail("https://cdn.discordapp.com/attachments/551802691488055325/561907561750724629/navy.png")
     .setTimestamp()
      message.channel.send(myembed)
 });
@@ -228,8 +228,8 @@ let sugembed = new Discord.RichEmbed()
 	.setAuthor('Suggestion Created By: ' + `${message.member.user.tag}`, message.author.avatarURL)
 	.setDescription(args.join(' '))
 	.setColor('RANDOM')
-	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
-    	.setThumbnail("https://imgur.com/cynJ0Yp.png")
+	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
+    	.setThumbnail("https://cdn.discordapp.com/attachments/551802691488055325/561907561750724629/navy.png")
 	.setTimestamp()
 
     let sugchannel = message.guild.channels.find(x => x.name === "suggestions")
@@ -300,7 +300,7 @@ var member = message.mentions.users.first();
      .setDescription('These are all the commands that you can currently use on the bot.')
      .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip` ', true)
      .addField(':gear: Bot/Server:', '`=ping, =server, =players, =stats, =suggest, =ip, =forums` ')
-	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
+	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
      message.channel.send(myembed)
   };
 
@@ -319,7 +319,7 @@ var member = message.mentions.users.first();
     	.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
         .addField('Users:', users)
         .addField('Channels:', channels)
-        .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
+        .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
     	message.channel.send(myembed)
     
 };
@@ -340,7 +340,7 @@ return rand[Math.floor(Math.random()*rand.length)];
     .setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
     .setDescription(doRandHT())
-    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/a_082033969e325ce03fb3efdcc1b9fdef.gif")
+    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
     message.channel.send(myembed)
  };
 
