@@ -133,7 +133,7 @@ client.on("message", async message => {
 		.setColor('RANDOM')
 		.addField('Achieving the SEAL Medal:', 'Reach a Officer ranking.')
 		.setImage('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/United_States_Navy_Special_Warfare_insignia.png/250px-United_States_Navy_Special_Warfare_insignia.png')
-		.addField('Information:', 'The medals stay with you forever, even when you retire as a Soldier.')
+		.setDescription('These medals stay with you forever, even when you retire.')
 		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
 		
 		message.delete().catch(O_o=>{});
