@@ -108,9 +108,20 @@ client.on("message", async message => {
 
 	
 	
+	if(command === 'moh') {
+	
+	if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permission to use this command.')
 
-	
-	
+		let mohembed = new Discord.RichEmbed()
+		.setDescription('Medal of Honor')
+		.setColor('RANDOM')
+		.addField('Achieving the Medal of Honor', 'Be the best of the best.')
+		.setImage('https://www.uniformribbons.com/blog/wp-content/uploads/2014/06/us-navy-medal-of-honor.png')
+		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
+		
+		message.delete().catch(O_o=>{});
+		message.channel.send(mohembed)
+	};
 	
 	
 	
