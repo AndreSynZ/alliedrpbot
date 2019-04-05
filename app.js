@@ -106,7 +106,7 @@ client.on("message", async message => {
   
 
 
-	
+	// Medals
 	
 	if(command === 'moh') {
 	
@@ -115,19 +115,35 @@ client.on("message", async message => {
 		let mohembed = new Discord.RichEmbed()
 		.setDescription('Medal of Honor')
 		.setColor('RANDOM')
-		.addField('Achieving the Medal of Honor', 'Be the best of the best.')
+		.addField('Achieving the Medal of Honor:', 'Be the best of the best.')
 		.setImage('http://www.esacademic.com/pictures/eswiki/85/US_Navy_Medal_of_Honor_%281913_to_1942%29.png')
+		.addField('Information:', 'The medals stay with you forever, even when you retire as a Soldier.')
 		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
 		
 		message.delete().catch(O_o=>{});
 		message.channel.send(mohembed)
 	};
 	
+	if(command == 'mons') {
+		
+	if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permission to use this command.')
+	
+		let monsembed = new Discord.RichEmbed()
+		.setDescription('The SEAL Medal')
+		.setColor('RANDOM')
+		.addField('Achieving the SEAL Medal:', 'Reach a Officer ranking.')
+		.setImage('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/United_States_Navy_Special_Warfare_insignia.png/250px-United_States_Navy_Special_Warfare_insignia.png')
+		.addField('Information:', 'The medals stay with you forever, even when you retire as a Soldier.')
+		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
+		
+		message.delete().catch(O_o=>{});
+		message.channel.send(monsembed)
 	
 	
+	};
+		
 	
-	
-
+	// Random
 
 	if (command === 'update') {
 		
