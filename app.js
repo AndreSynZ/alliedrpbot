@@ -129,7 +129,7 @@ client.on("message", async message => {
 	if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permission to use this command.')
 	
 		let monsembed = new Discord.RichEmbed()
-		.setDescription('The SEAL Medal')
+		.setTitle('The SEAL Medal')
 		.setColor('RANDOM')
 		.addField('Achieving the SEAL Medal:', 'Reach a Officer ranking.')
 		.setImage('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/United_States_Navy_Special_Warfare_insignia.png/250px-United_States_Navy_Special_Warfare_insignia.png')
