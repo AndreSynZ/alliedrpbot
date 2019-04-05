@@ -116,7 +116,7 @@ client.on("message", async message => {
 		.setDescription('Medal of Honor')
 		.setColor('RANDOM')
 		.addField('Achieving the Medal of Honor', 'Be the best of the best.')
-		.setImage('https://www.uniformribbons.com/blog/wp-content/uploads/2014/06/us-navy-medal-of-honor.png')
+		.setImage('http://www.esacademic.com/pictures/eswiki/85/US_Navy_Medal_of_Honor_%281913_to_1942%29.png')
 		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
 		
 		message.delete().catch(O_o=>{});
