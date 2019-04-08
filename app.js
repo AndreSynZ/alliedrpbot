@@ -190,7 +190,7 @@ client.on("message", async message => {
 		      if(command === 'players') {
   
   var sq = new SourceQuery(1000); // 1000ms timeout
-sq.open('51.75.174.10', 27018);
+sq.open('51.89.128.98', 27016);
  
 
 
