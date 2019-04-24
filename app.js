@@ -38,9 +38,9 @@ const colorlist = [
 const fs = require('fs');
 
 const activities_list = [
-    "with Air | =help", 
+    "with Bakka | =help", 
     "with Archer | =help",
-    "with Gallagher | =help"
+    "with Mattie | =help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
@@ -118,7 +118,7 @@ client.on("message", async message => {
 		.addField('Achieving the Medal of Honor:', 'Be the best of the best.')
 		.setImage('http://www.esacademic.com/pictures/eswiki/85/US_Navy_Medal_of_Honor_%281913_to_1942%29.png')
 		.setDescription('These medals stay with you forever, even when you retire.')
-		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
+		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
 		
 		message.delete().catch(O_o=>{});
 		message.channel.send(mohembed)
@@ -134,7 +134,7 @@ client.on("message", async message => {
 		.addField('Achieving the SEAL Medal:', 'Reach a Officer ranking.')
 		.setImage('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/United_States_Navy_Special_Warfare_insignia.png/250px-United_States_Navy_Special_Warfare_insignia.png')
 		.setDescription('These medals stay with you forever, even when you retire.')
-		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
+		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
 		
 		message.delete().catch(O_o=>{});
 		message.channel.send(monsembed)
@@ -173,7 +173,7 @@ client.on("message", async message => {
 		.addField('Reason:', args[0] + " " + args[1] + " " + args[2])
 		.addField('Time Left:', args[4])
 		.setColor('RANDOM')
-		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
+		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
 	
 				    let sugchannel = message.guild.channels.find(x => x.name === "loa")
     if(!sugchannel) return message.channel.send("Can't find loa channel")
@@ -202,12 +202,12 @@ sq.getPlayers(function(err, players){
         playersString += ply.name + '\n';
     })
     myembed.setTitle("Players Currently Online:")
-    myembed.setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
+    myembed.setAuthor("Spetsnaz Database", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
     myembed.setDescription(playersString)
-    myembed.addField('Total Players Online:', players.length + '/45')
+    myembed.addField('Total Players Online:', players.length + '/32')
     myembed.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-    myembed.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
-    myembed.setThumbnail("https://cdn.discordapp.com/attachments/551802691488055325/561907561750724629/navy.png")
+    myembed.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
+    myembed.setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
     myembed.setTimestamp()	
     message.channel.send(myembed);
 })};
@@ -231,13 +231,13 @@ sq.open('51.75.174.10', 27018);
 sq.getInfo(function(err, info){
     let myembed = new Discord.RichEmbed ()
 	.setTitle("Server Information:")
-	.setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
+	.setAuthor("Spetsnaz Database", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-    .addField("Players:", info['players'] + "/45")
+    .addField("Players:", info['players'] + "/32")
     .addField("Map:", info['map'])
     .addField("Gamemode:", "MilitaryRP")
-    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
-    .setThumbnail("https://cdn.discordapp.com/attachments/551802691488055325/561907561750724629/navy.png")
+    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
+    .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
     .setTimestamp()
      message.channel.send(myembed)
 });
@@ -265,8 +265,8 @@ let sugembed = new Discord.RichEmbed()
 	.setAuthor('Suggestion Created By: ' + `${message.member.user.tag}`, message.author.avatarURL)
 	.setDescription(args.join(' '))
 	.setColor('RANDOM')
-	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
-    	.setThumbnail("https://cdn.discordapp.com/attachments/551802691488055325/561907561750724629/navy.png")
+	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
+    	.setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
 	.setTimestamp()
 
     let sugchannel = message.guild.channels.find(x => x.name === "suggestions")
@@ -305,7 +305,8 @@ if(command === "ip") {
 var member = message.mentions.users.first();
     let embed = new Discord.RichEmbed()
   .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-  .addField('Server IP:', '51.75.174.10:27018')
+  .addField('Server IP:', '185.134.22.10:27064')
+  .addField('Steam Connect:', 'steam://connect/185.134.22.10:27064')
     message.channel.send(embed)
 };
 
@@ -313,7 +314,7 @@ var member = message.mentions.users.first();
 var member = message.mentions.users.first();
     let embed = new Discord.RichEmbed()
   .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-  .addField('Forums:', 'https://carbonmrp.mistforums.com/')
+  .addField('Forums:', 'https://paradoxgamingmrp.mistforums.com/')
     message.channel.send(embed)
 };
 	
@@ -332,12 +333,12 @@ var member = message.mentions.users.first();
   if(command === "help") {
      let myembed = new Discord.RichEmbed()
      .setTitle('Commands')
-     .setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
+     .setAuthor("Spetsnaz Database", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
      .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
      .setDescription('These are all the commands that you can currently use on the bot.')
      .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip` ', true)
      .addField(':gear: Bot/Server:', '`=ping, =server, =players, =stats, =suggest, =ip, =forums` ')
-	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
+	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
      message.channel.send(myembed)
   };
 
@@ -356,7 +357,7 @@ var member = message.mentions.users.first();
     	.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
         .addField('Users:', users)
         .addField('Channels:', channels)
-        .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
+        .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
     	message.channel.send(myembed)
     
 };
@@ -374,10 +375,11 @@ return rand[Math.floor(Math.random()*rand.length)];
 	
     let myembed = new Discord.RichEmbed()
     .setTitle('You got..')
-    .setAuthor("Navy SEALs Database", "https://imgur.com/cynJ0Yp.png")
+    .setAuthor("Spetsnaz Database", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
     .setDescription(doRandHT())
-    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
+    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
+    .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/d/de/Russia-Coin-5-2009-b.png")
     message.channel.send(myembed)
  };
 
