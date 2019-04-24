@@ -188,7 +188,7 @@ client.on("message", async message => {
 		      if(command === 'players') {
   
   var sq = new SourceQuery(1000); // 1000ms timeout
-sq.open('51.89.128.98', 27016);
+sq.open('185.134.22.10', 27064);
  
 
 
@@ -221,7 +221,7 @@ sq.getPlayers(function(err, players){
 	      if(command === 'server') {
   
   var sq = new SourceQuery(1000); // 1000ms timeout
-sq.open('51.75.174.10', 27018);
+sq.open('185.134.22.10', 27064);
  
 
 
@@ -231,7 +231,7 @@ sq.getInfo(function(err, info){
 	.setTitle("Server Information:")
 	.setAuthor("Spetsnaz Database", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-    .addField("Players:", players.length + "/32")
+    .addField("Players:", info['players'] + "/32")
     .addField("Map:", info['map'])
     .addField("Gamemode:", "MilitaryRP")
     .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
