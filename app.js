@@ -231,7 +231,7 @@ sq.getInfo(function(err, info){
 	.setTitle("Server Information:")
 	.setAuthor("Spetsnaz Database", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-    .addField("Players:", info['players'] + "/32")
+    .addField("Players:", info['players'])
     .addField("Map:", info['map'])
     .addField("Gamemode:", "MilitaryRP")
     .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
