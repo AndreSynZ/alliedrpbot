@@ -1,6 +1,4 @@
-
-
-// Load up the discord.js library
+﻿// Load up the discord.js library
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 
@@ -18,7 +16,7 @@ const PREFIX = "=" // bot's prefix
 
 var SourceQuery = require('sourcequery');
 
-var servers = {};
+
 
 
 
