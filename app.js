@@ -196,7 +196,7 @@ sq.getPlayers(function(err, players){
     let myembed = new Discord.RichEmbed ()
     let playersString = "";
     players.forEach(ply => {
-        playersString += ply.name + '\n';
+        playersString += ply.name;
     })
     myembed.setTitle("Players Currently Online:")
     myembed.setDescription(playersString)
