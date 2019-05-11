@@ -250,7 +250,9 @@ let sugembed = new Discord.RichEmbed()
               message.react("❌")
             }).catch(function() {
               //Something
-             })};
+             })
+	
+	message.delete().catch(O_o=>{})};
 	
 	
 
