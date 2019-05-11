@@ -84,7 +84,7 @@ client.on("guildMemberAdd", function(member) {
     .setTimestamp()	
 	
 	
-	    member.guild.channels.find(x => x.name === "welcome").send(joinembed);
+	    message.guild.channels.find(x => x.name === "welcome").send(joinembed);
 		
 	
 });
