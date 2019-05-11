@@ -74,7 +74,21 @@ client.on("message", async message => {
 	
 	
 	
+client.on("guildMemberAdd", function(member) {
 
+	let joinembed = new Discord.RichEmbed()
+	.setDescription(member.toString() + " welcome to the clan.")
+	.setColor('RANDOM')
+    .setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    .setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    .setTimestamp()	
+	
+	
+	    member.guild.channels.find(x => x.name === "welcome")
+		
+		    member.send(joinembed);
+	
+});
 
 	
 	
