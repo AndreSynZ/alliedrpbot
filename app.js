@@ -16,7 +16,7 @@ const PREFIX = "-" // bot's prefix
 
 var SourceQuery = require('sourcequery');
 
-
+const newUsers = new Discord.Collection();
 
 
 
