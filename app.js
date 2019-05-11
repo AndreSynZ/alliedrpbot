@@ -74,16 +74,8 @@ client.on("message", async message => {
 	
 	
 	
-client.on("guildMemberAdd", (member) => {
-  const guild = member.guild;
-  newUsers.set(member.id, member.user);
-
-  if (newUsers.size > 1) {
-    const defaultChannel = guild.channels.find(x => x.name === "welcome");
-    const userlist = newUsers.map(u => u.toString()).join(" ");
-    defaultChannel.send("Welcome our new users!\n" + userlist);
-    newUsers.clear();
-  }
+bot.on("guildMemberAdd", function(member) {
+    member.guild.channels.find(x => x.name === "welcome").send(member.toString() + " welcome to the clan.");
 });
 	
 	
