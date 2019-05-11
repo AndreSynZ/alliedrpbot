@@ -206,7 +206,7 @@ sq.getPlayers(function(err, players){
     myembed.setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
     myembed.setTimestamp()	
     message.channel.send(myembed);
-})}};
+})};
 	
 	
 	
