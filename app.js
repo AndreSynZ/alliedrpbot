@@ -16,7 +16,6 @@ const PREFIX = "-" // bot's prefix
 
 var SourceQuery = require('sourcequery');
 
-const newUsers = new Discord.Collection();
 
 
 
@@ -74,7 +73,7 @@ client.on("message", async message => {
 	
 	
 	
-bot.on("guildMemberAdd", function(member) {
+client.on("guildMemberAdd", function(member) {
     member.guild.channels.find(x => x.name === "welcome").send(member.toString() + " welcome to the clan.");
 });
 	
