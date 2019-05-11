@@ -183,33 +183,6 @@ client.on("message", async message => {
 		message.channel.send(testingembed)
  };
 
-
-		      if(command === 'players') {
-  
-  var sq = new SourceQuery(1500); // 1000ms timeout
-sq.open('51.38.95.230', 27015);
- 
-
-
- 
-sq.getPlayers(function(err, players){
-    let myembed = new Discord.RichEmbed ()
-    let playersString = "";
-    players.forEach(ply => {
-        playersString += ply.name;
-    })
-    myembed.setTitle("Players Currently Online:")
-    myembed.setDescription(playersString)
-    myembed.addField('Total Players Online:', players.length + '/100')
-    myembed.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-    myembed.setFooter("Freedom Fighters Database")
-    myembed.setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
-    myembed.setTimestamp()	
-    message.channel.send(myembed);
-})};
-	
-	
-	
 	
 	
 	
@@ -331,7 +304,7 @@ var member = message.mentions.users.first();
      .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
      .setDescription('These are all the commands that you can currently use on the bot.')
      .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip` ', true)
-     .addField(':gear: Bot/Server:', '`=ping, =server, =players, =stats, =suggest, =ip, =forums` ')
+     .addField(':gear: Bot/Server:', '`=ping, =server, =stats, =suggest, =ip, =forums` ')
     .setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
     .setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
     .setTimestamp()
