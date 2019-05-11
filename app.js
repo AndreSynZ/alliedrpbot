@@ -85,7 +85,7 @@ client.on("guildMemberAdd", function(member) {
 	
 	
 
-    member.guild.channels.get('576545597100916767').send(joinembed); 
+    member.guild.channels.find(x => x.name === "welcome").send(joinembed); 
 
 });
 
