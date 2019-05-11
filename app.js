@@ -12,7 +12,7 @@ const token = process.env.token;
 const config = require("./config.json");
 // config.token contains the bot's token
 // config.prefix contains the message prefix.
-const PREFIX = "=" // bot's prefix
+const PREFIX = "-" // bot's prefix
 
 var SourceQuery = require('sourcequery');
 
@@ -34,9 +34,9 @@ const colorlist = [
 const fs = require('fs');
 
 const activities_list = [
-    "with Kai | =help", 
-    "with Tasid | =help",
-    "with SynZ | =help"
+    "with Kai | -help", 
+    "with Tasid | -help",
+    "with SynZ | -help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
