@@ -23,11 +23,9 @@ var SourceQuery = require('sourcequery');
 
 
 const colorlist = [
-	"#675645",
-	"#e1d798",
-	"#424756",
-	"#4d784e",
-	"#6ea171"
+	"#42f483",
+	"#07ba14",
+	"#777777"
 	];
 
 
@@ -36,9 +34,9 @@ const colorlist = [
 const fs = require('fs');
 
 const activities_list = [
-    "with Bakka | =help", 
-    "with Archer | =help",
-    "with Mattie | =help"
+    "with Kai | =help", 
+    "with Tasid | =help",
+    "with SynZ | =help"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
@@ -151,7 +149,8 @@ client.on("message", async message => {
 		let testembed = new Discord.RichEmbed()
 		.setDescription('- ' + args.join(" "))
 		.setColor('RANDOM')
-		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/e348c772a6727289c320942756672d7a.png")
+		.setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+		.setTimestamp()
 		
 		message.delete().catch(O_o=>{});
 		
@@ -188,7 +187,7 @@ client.on("message", async message => {
 		      if(command === 'players') {
   
   var sq = new SourceQuery(1000); // 1000ms timeout
-sq.open('185.134.22.10', 27064);
+sq.open('51.38.95.230', 27015);
  
 
 
@@ -200,12 +199,11 @@ sq.getPlayers(function(err, players){
         playersString += ply.name + '\n';
     })
     myembed.setTitle("Players Currently Online:")
-    myembed.setAuthor("Spetsnaz Database", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
     myembed.setDescription(playersString)
-    myembed.addField('Total Players Online:', players.length + '/32')
+    myembed.addField('Total Players Online:', players.length + '/100')
     myembed.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-    myembed.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
-    myembed.setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
+    myembed.setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    myembed.setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
     myembed.setTimestamp()	
     message.channel.send(myembed);
 })};
@@ -221,7 +219,7 @@ sq.getPlayers(function(err, players){
 	      if(command === 'server') {
   
   var sq = new SourceQuery(1000); // 1000ms timeout
-sq.open('185.134.22.10', 27064);
+sq.open('51.38.95.230', 27015);
  
 
 
@@ -229,14 +227,13 @@ sq.open('185.134.22.10', 27064);
 sq.getInfo(function(err, info){
     let myembed = new Discord.RichEmbed ()
 	.setTitle("Server Information:")
-	.setAuthor("Spetsnaz Database", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-    .addField("Players:", info['players'] + "/32")
+    .addField("Players:", info['players'] + "/100")
     .addField("Map:", info['map'])
-    .addField("Gamemode:", "MilitaryRP")
-    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
-    .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
-    .setTimestamp()
+    .addField("Gamemode:", "DarkRP")
+    myembed.setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    myembed.setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    myembed.setTimestamp()	
      message.channel.send(myembed)
 });
  
@@ -263,9 +260,9 @@ let sugembed = new Discord.RichEmbed()
 	.setAuthor('Suggestion Created By: ' + `${message.member.user.tag}`, message.author.avatarURL)
 	.setDescription(args.join(' '))
 	.setColor('RANDOM')
-	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
-    	.setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
-	.setTimestamp()
+    .setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    .setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    .setTimestamp()	
 
     let sugchannel = message.guild.channels.find(x => x.name === "suggestions")
     if(!sugchannel) return message.channel.send("Can't find suggestions channel")
@@ -303,8 +300,8 @@ if(command === "ip") {
 var member = message.mentions.users.first();
     let embed = new Discord.RichEmbed()
   .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-  .addField('Server IP:', '185.134.22.10:27064')
-  .addField('Steam Connect:', 'steam://connect/185.134.22.10:27064')
+  .addField('Server IP:', '51.38.95.230:27015')
+  .addField('Steam Connect:', 'steam://connect/51.38.95.230:27015')
     message.channel.send(embed)
 };
 
@@ -312,7 +309,7 @@ var member = message.mentions.users.first();
 var member = message.mentions.users.first();
     let embed = new Discord.RichEmbed()
   .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-  .addField('Forums:', 'https://paradoxgamingmrp.mistforums.com/')
+  .addField('Forums:', 'https://www.hawkservers.co')
     message.channel.send(embed)
 };
 	
@@ -331,12 +328,13 @@ var member = message.mentions.users.first();
   if(command === "help") {
      let myembed = new Discord.RichEmbed()
      .setTitle('Commands')
-     .setAuthor("Spetsnaz Database", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
      .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
      .setDescription('These are all the commands that you can currently use on the bot.')
      .addField(':smile: Fun Commands:', '`=say, =avatar, =coinflip` ', true)
      .addField(':gear: Bot/Server:', '`=ping, =server, =players, =stats, =suggest, =ip, =forums` ')
-	.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
+    .setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    .setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    .setTimestamp()
      message.channel.send(myembed)
   };
 
@@ -355,7 +353,9 @@ var member = message.mentions.users.first();
     	.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
         .addField('Users:', users)
         .addField('Channels:', channels)
-        .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
+    .setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    .setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    .setTimestamp()
     	message.channel.send(myembed)
     
 };
@@ -365,7 +365,7 @@ var member = message.mentions.users.first();
 if(command == "coinflip")
 {
       function doRandHT() {
-var rand = ['HEADS!','TAILS!'];
+var rand = ['https://cdn.discordapp.com/attachments/576560218968948738/576560308307361793/ffdeath.png','https://cdn.discordapp.com/attachments/576560218968948738/576560308836106300/fflife.png'];
 
 return rand[Math.floor(Math.random()*rand.length)];
 }
@@ -373,11 +373,10 @@ return rand[Math.floor(Math.random()*rand.length)];
 	
     let myembed = new Discord.RichEmbed()
     .setTitle('You got..')
-    .setAuthor("Spetsnaz Database", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Spetsnaz_emblem.svg/1200px-Spetsnaz_emblem.svg.png")
     .setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-    .setDescription(doRandHT())
-    .setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
-    .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/d/de/Russia-Coin-5-2009-b.png")
+    .setImage(doRandHT())
+    .setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    .setTimestamp()
     message.channel.send(myembed)
  };
 
