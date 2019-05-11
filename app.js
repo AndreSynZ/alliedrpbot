@@ -84,7 +84,10 @@ client.on("guildMemberAdd", function(member) {
     .setTimestamp()	
 	
 	
-	    message.guild.channels.find(x => x.name === "welcome").send(joinembed);
+    let sugchannel = message.guild.channels.find(x => x.name === "welcome")
+    if(!sugchannel) return message.channel.send("Can't find welcome channel")
+
+    sugchannel.send(joinembed)
 		
 	
 });
