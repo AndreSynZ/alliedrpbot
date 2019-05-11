@@ -149,7 +149,7 @@ client.on("message", async message => {
 		let testembed = new Discord.RichEmbed()
 		.setDescription('- ' + args.join(" "))
 		.setColor('RANDOM')
-		.setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+		.setFooter("Freedom Fighters Database")
 		.setTimestamp()
 		
 		message.delete().catch(O_o=>{});
@@ -202,11 +202,11 @@ sq.getPlayers(function(err, players){
     myembed.setDescription(playersString)
     myembed.addField('Total Players Online:', players.length + '/100')
     myembed.setColor(colorlist[Math.floor(Math.random() * colorlist.length).toString(7)])
-    myembed.setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    myembed.setFooter("Freedom Fighters Database")
     myembed.setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
     myembed.setTimestamp()	
     message.channel.send(myembed);
-})};
+})}};
 	
 	
 	
@@ -231,7 +231,7 @@ sq.getInfo(function(err, info){
     .addField("Players:", info['players'] + "/100")
     .addField("Map:", info['map'])
     .addField("Gamemode:", "DarkRP")
-    myembed.setFooter("Freedom Fighters Database", "https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    myembed.setFooter("Freedom Fighters Database")
     myembed.setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
     myembed.setTimestamp()	
      message.channel.send(myembed)
