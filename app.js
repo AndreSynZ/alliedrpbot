@@ -222,23 +222,23 @@ sq.getInfo(function(err, info){
 	
 	
 	
-	if(command === 'suggest') {
+	if(command === 'app') {
 
 
 	
-if (!args[1]) return message.channel.send('Proper Usage: `=suggest <suggestion>(Atleast two words in the suggestion is needed)`')
+if (!args[1]) return message.channel.send('Rip, you did an oopsie. Proper Usage: `=app <words>`')
 
 
 let sugembed = new Discord.RichEmbed()
-	.setAuthor('Suggestion Created By: ' + `${message.member.user.tag}`, message.author.avatarURL)
-	.setDescription(args.join(' '))
+	.setAuthor('Application Created By: ' + `${message.member.user.tag}`, message.author.avatarURL)
+	.setDescription("**" + args.join(' ') + "**")
 	.setColor('RANDOM')
     .setFooter("Freedom Fighters Database")
     .setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
     .setTimestamp()	
 
-    let sugchannel = message.guild.channels.find(x => x.name === "suggestions")
-    if(!sugchannel) return message.channel.send("Can't find suggestions channel")
+    let sugchannel = message.guild.channels.find(x => x.name === "applications")
+    if(!sugchannel) return message.channel.send("Can't find applications channel")
 
     sugchannel.send(sugembed)
 
@@ -254,13 +254,13 @@ let sugembed = new Discord.RichEmbed()
 	
 	
 
-	if(command === 'suggest') {
+	if(command === 'app') {
 
 
 	
 if (!args[1]) return message.channel.send('')
 		
-	message.channel.send('Thank you for your suggestion!')};
+	message.channel.send('Thank you for submitting your application! It will be shown in #applications')};
 	
 	
 	
