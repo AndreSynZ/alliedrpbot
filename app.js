@@ -226,7 +226,7 @@ sq.getInfo(function(err, info){
 
 
 	
-if (!args[1]) return message.channel.send('Rip, you did an oopsie. Proper Usage: `=app <words>`')
+if (!args[1]) return message.channel.send('Rip, you did an oopsie. Proper Usage: `-app <words>`')
 
 
 let sugembed = new Discord.RichEmbed()
