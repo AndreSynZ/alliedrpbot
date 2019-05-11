@@ -114,7 +114,8 @@ client.on("message", async message => {
 		.addField('Achieving the Medal of Honor:', 'Be the best of the best.')
 		.setImage('http://www.esacademic.com/pictures/eswiki/85/US_Navy_Medal_of_Honor_%281913_to_1942%29.png')
 		.setDescription('These medals stay with you forever, even when you retire.')
-		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
+		.setFooter("Freedom Fighters Database")
+		
 		
 		message.delete().catch(O_o=>{});
 		message.channel.send(mohembed)
@@ -125,13 +126,12 @@ client.on("message", async message => {
 	if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('You do not have permission to use this command.')
 	
 		let monsembed = new Discord.RichEmbed()
-		.setTitle('The SEAL Medal')
+		.setTitle('The Freedom Medal')
 		.setColor('RANDOM')
-		.addField('Achieving the SEAL Medal:', 'Reach a Officer ranking.')
+		.addField('Achieving the Freedom Medal:', 'Reach a Officer ranking.')
 		.setImage('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/United_States_Navy_Special_Warfare_insignia.png/250px-United_States_Navy_Special_Warfare_insignia.png')
 		.setDescription('These medals stay with you forever, even when you retire.')
-		.setFooter("Bot made by Archer", "https://cdn.discordapp.com/avatars/280313289857171456/b704b55fe335bcf2bee88b832c52ea29.jpg")
-		
+		.setFooter("Freedom Fighters Database")		
 		message.delete().catch(O_o=>{});
 		message.channel.send(monsembed)
 	
