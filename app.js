@@ -75,15 +75,15 @@ client.on("message", async message => {
 	
 client.on("guildMemberAdd", function(member) {
 	let embed = new Discord.RichEmbed()
-	.setTitle('Welcome to Freedom Fighters' `${member.user}!`)
-	.setDescription("We are the Faction that fights for Freedom!")
-	.addField("Joining the Faction", "You join the Faction by answer the questions at #application-template and pasting the application in #type-your-app-here. It will then show up in #applications")
-	.addField("Missions", "In order to view all of the missions that we are going to do in the future, go to #missions")
-	.addField("Ranks", "All of the ranks are visible at #ranking-structure")
-	.addField("Medals", "The medals you can achieve as rewards are displayed in #medals")
-	.setFooter("Freedom Fighters Database")
- 	.setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
-    	.setTimestamp()	
+	member.setTitle('Welcome to Freedom Fighters' `${member.user}!`)
+	member.setDescription("We are the Faction that fights for Freedom!")
+	member.addField("Joining the Faction", "You join the Faction by answer the questions at #application-template and pasting the application in #type-your-app-here. It will then show up in #applications")
+	member.addField("Missions", "In order to view all of the missions that we are going to do in the future, go to #missions")
+	member.addField("Ranks", "All of the ranks are visible at #ranking-structure")
+	member.addField("Medals", "The medals you can achieve as rewards are displayed in #medals")
+	member.setFooter("Freedom Fighters Database")
+ 	member.setThumbnail("https://cdn.discordapp.com/attachments/576545355978637315/576549475200270366/ff.png")
+    	member.setTimestamp()	
 	
     member.guild.channels.find(x => x.name === "welcome").send(embed);
 });
