@@ -75,7 +75,7 @@ client.on("message", async message => {
 	
 client.on("guildMemberAdd", function(member) {
 	let embed = new Discord.RichEmbed()
-	.setTitle(`Welcome to Freedom Fighters ${member.user}!`)
+	.setTitle('Welcome to Freedom Fighters' `${member.user}!`)
 	.setDescription("We are the Faction that fights for Freedom!")
 	.addField("Joining the Faction", "You join the Faction by answer the questions at #application-template and pasting the application in #type-your-app-here. It will then show up in #applications")
 	.addField("Missions", "In order to view all of the missions that we are going to do in the future, go to #missions")
